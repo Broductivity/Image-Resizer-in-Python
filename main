@@ -1,0 +1,14 @@
+from PIL import Image
+
+user_image = input("Enter the path of the image would you like to resize (note that the original image will be replaced with the resized image): ")
+image = Image.open(user_image)
+print(f"The image's current size is {image.size}")
+width = input("Enter the width of your new image: ")
+height = input("Enter the height of your new image: ")
+
+def resize_image(width, height):    
+    resized_image = image.resize((int(width), int(height)))
+    resized_image.save(str(user_image))
+    print("Your image has been resized to be " + "(" + width + ", " + height + ")" + ".")
+
+resize_image(width, height)
